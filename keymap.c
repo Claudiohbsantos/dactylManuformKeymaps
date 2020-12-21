@@ -258,7 +258,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_LBRC ,  KC_RBRC,                                                    KC_PLUS, KC_EQL  ,
                                    LT(_RAISE, KC_TAB) , KC_SPC  ,            KC_ENT , OSL(_LOWER),
                                               KC_LALT , KC_LCTL ,            KC_LCTL, KC_LALT  ,
-                                              _______ , KC_LGUI ,            KC_LGUI, _______
+                                              _______ , KC_LGUI ,            KC_LGUI, KC_CAPS
   ),
 
   [_LOWER] = LAYOUT_5x6(
