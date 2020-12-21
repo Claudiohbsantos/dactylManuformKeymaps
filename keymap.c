@@ -31,6 +31,8 @@ enum combos {
   F_D_ESC,
   J_K_BSPC,
   J_L_DEL,
+  // symbols
+    // home row
   SPC_F_LPRN,
   ENT_J_RPRN,
   SPC_D_LCBR,
@@ -39,6 +41,18 @@ enum combos {
   ENT_L_RBRC,
   SPC_A_LT,
   ENT_SC_GT,
+    // upper row
+  SPC_Q_EXLM,
+  SPC_W_AT,
+  SPC_E_HASH,
+  SPC_R_DLR,
+  SPC_T_PERC,
+  ENT_Y_CIRC,
+  ENT_U_AMPR,
+  ENT_I_ASTR,
+  ENT_O_DQT,
+  ENT_P_UNDS,
+    // lower row
   ENT_DOT_ARROW,
   // combo shifts
     // left hand
@@ -82,6 +96,16 @@ const uint16_t PROGMEM spc_s_lbrc[] = { KC_SPC, KC_S, COMBO_END};
 const uint16_t PROGMEM ent_l_rbrc[] = { KC_ENT, KC_L, COMBO_END};
 const uint16_t PROGMEM spc_a_lt[] = { KC_SPC, KC_A, COMBO_END};
 const uint16_t PROGMEM ent_sc_gt[] = { KC_ENT, KC_SCLN, COMBO_END};
+const uint16_t PROGMEM spc_q_exlm[] = { KC_SPC, KC_Q, COMBO_END};
+const uint16_t PROGMEM spc_w_at[] = { KC_SPC, KC_W, COMBO_END};
+const uint16_t PROGMEM spc_e_hash[] = { KC_SPC, KC_E, COMBO_END};
+const uint16_t PROGMEM spc_r_dlr[] = { KC_SPC, KC_R, COMBO_END};
+const uint16_t PROGMEM spc_t_perc[] = { KC_SPC, KC_T, COMBO_END};
+const uint16_t PROGMEM ent_y_circ[] = { KC_ENT, KC_Y, COMBO_END};
+const uint16_t PROGMEM ent_u_ampr[] = { KC_ENT, KC_U, COMBO_END};
+const uint16_t PROGMEM ent_i_astr[] = { KC_ENT, KC_I, COMBO_END};
+const uint16_t PROGMEM ent_o_dqt[] = { KC_ENT, KC_O, COMBO_END};
+const uint16_t PROGMEM ent_p_unds[] = { KC_ENT, KC_P, COMBO_END};
 const uint16_t PROGMEM ent_dot_arrow[] = { KC_ENT, KC_DOT, COMBO_END};
 // combo shift
 const uint16_t PROGMEM ent_q_sftq[] = {KC_ENT ,KC_Q , COMBO_END};
@@ -123,6 +147,16 @@ combo_t key_combos[COMBO_COUNT] = {
   [ENT_L_RBRC] = COMBO(ent_l_rbrc, KC_RBRC),
   [SPC_A_LT] = COMBO(spc_a_lt, KC_LT),
   [ENT_SC_GT] = COMBO(ent_sc_gt, KC_GT),
+  [SPC_Q_EXLM] = COMBO(spc_q_exlm, KC_EXLM),
+  [SPC_W_AT] = COMBO(spc_w_at, KC_AT),
+  [SPC_E_HASH] = COMBO(spc_e_hash, KC_HASH),
+  [SPC_R_DLR] = COMBO(spc_r_dlr, KC_DLR),
+  [SPC_T_PERC] = COMBO(spc_t_perc, KC_PERC),
+  [ENT_Y_CIRC] = COMBO(ent_y_circ, KC_CIRC),
+  [ENT_U_AMPR] = COMBO(ent_u_ampr, KC_AMPR),
+  [ENT_I_ASTR] = COMBO(ent_i_astr, KC_ASTR),
+  [ENT_O_DQT] = COMBO(ent_o_dqt, KC_DQT),
+  [ENT_P_UNDS] = COMBO(ent_p_unds, KC_UNDS),
   [ENT_DOT_ARROW] = COMBO_ACTION(ent_dot_arrow),
 // combo shifts
   [ENT_Q_SFTA] = COMBO_ACTION(ent_q_sftq),
