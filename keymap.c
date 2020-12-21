@@ -53,6 +53,8 @@ enum combos {
   ENT_O_DQT,
   ENT_P_UNDS,
     // lower row
+  ENT_SLSH_QUES,
+  ENT_BSLS_PIPE,
   ENT_DOT_ARROW,
   // combo shifts
     // left hand
@@ -83,6 +85,7 @@ enum combos {
   SPC_L_SFTA,
   SPC_N_SFTA,
   SPC_M_SFTA,
+  SPC_SCLN_COLN,
 };
 
 const uint16_t PROGMEM f_d_esc[] = { KC_F, KC_D, COMBO_END};
@@ -107,6 +110,8 @@ const uint16_t PROGMEM ent_i_astr[] = { KC_ENT, KC_I, COMBO_END};
 const uint16_t PROGMEM ent_o_dqt[] = { KC_ENT, KC_O, COMBO_END};
 const uint16_t PROGMEM ent_p_unds[] = { KC_ENT, KC_P, COMBO_END};
 const uint16_t PROGMEM ent_dot_arrow[] = { KC_ENT, KC_DOT, COMBO_END};
+const uint16_t PROGMEM ent_slsh_ques[] = { KC_ENT, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM ent_bsls_pipe[] = { KC_ENT, KC_BSLS, COMBO_END};
 // combo shift
 const uint16_t PROGMEM ent_q_sftq[] = {KC_ENT ,KC_Q , COMBO_END};
 const uint16_t PROGMEM ent_w_sftw[] = {KC_ENT ,KC_W , COMBO_END};
@@ -134,6 +139,7 @@ const uint16_t PROGMEM spc_k_sftk[] = {KC_SPC ,KC_K , COMBO_END};
 const uint16_t PROGMEM spc_l_sftl[] = {KC_SPC ,KC_L , COMBO_END};
 const uint16_t PROGMEM spc_n_sftn[] = {KC_SPC ,KC_N , COMBO_END};
 const uint16_t PROGMEM spc_m_sftm[] = {KC_SPC ,KC_M , COMBO_END};
+const uint16_t PROGMEM spc_scln_coln[] = { KC_SPC, KC_SCLN, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   [F_D_ESC] = COMBO(f_d_esc, KC_ESC),
@@ -158,6 +164,8 @@ combo_t key_combos[COMBO_COUNT] = {
   [ENT_O_DQT] = COMBO(ent_o_dqt, KC_DQT),
   [ENT_P_UNDS] = COMBO(ent_p_unds, KC_UNDS),
   [ENT_DOT_ARROW] = COMBO_ACTION(ent_dot_arrow),
+  [ENT_SLSH_QUES] = COMBO(ent_slsh_ques,KC_QUES),
+  [ENT_BSLS_PIPE] = COMBO(ent_bsls_pipe,KC_PIPE),
 // combo shifts
   [ENT_Q_SFTA] = COMBO_ACTION(ent_q_sftq),
   [ENT_W_SFTA] = COMBO_ACTION(ent_w_sftw),
@@ -185,6 +193,7 @@ combo_t key_combos[COMBO_COUNT] = {
   [SPC_L_SFTA] = COMBO_ACTION(spc_l_sftl),
   [SPC_N_SFTA] = COMBO_ACTION(spc_n_sftn),
   [SPC_M_SFTA] = COMBO_ACTION(spc_m_sftm),
+  [SPC_SCLN_COLN] = COMBO(spc_scln_coln,KC_COLN),
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
