@@ -86,6 +86,17 @@ enum combos {
   SPC_N_SFTA,
   SPC_M_SFTA,
   SPC_SCLN_COLN,
+  // home numbers
+  M_A_1,
+  M_S_2,
+  M_D_3,
+  M_F_4,
+  M_G_5,
+  V_H_6,
+  V_J_7,
+  V_K_8,
+  V_L_9,
+  V_SCLN_0,
 };
 
 const uint16_t PROGMEM f_d_esc[] = { KC_F, KC_D, COMBO_END};
@@ -140,6 +151,17 @@ const uint16_t PROGMEM spc_l_sftl[] = {KC_SPC ,KC_L , COMBO_END};
 const uint16_t PROGMEM spc_n_sftn[] = {KC_SPC ,KC_N , COMBO_END};
 const uint16_t PROGMEM spc_m_sftm[] = {KC_SPC ,KC_M , COMBO_END};
 const uint16_t PROGMEM spc_scln_coln[] = { KC_SPC, KC_SCLN, COMBO_END};
+// home numbers
+const uint16_t PROGMEM m_a_1[] = {KC_M, KC_A, COMBO_END};
+const uint16_t PROGMEM m_s_2[] = {KC_M, KC_S, COMBO_END};
+const uint16_t PROGMEM m_d_3[] = {KC_M, KC_D, COMBO_END};
+const uint16_t PROGMEM m_f_4[] = {KC_M, KC_F, COMBO_END};
+const uint16_t PROGMEM m_g_5[] = {KC_M, KC_G, COMBO_END};
+const uint16_t PROGMEM v_h_6[] = {KC_V, KC_H, COMBO_END};
+const uint16_t PROGMEM v_j_7[] = {KC_V, KC_J, COMBO_END};
+const uint16_t PROGMEM v_k_8[] = {KC_V, KC_K, COMBO_END};
+const uint16_t PROGMEM v_l_9[] = {KC_V, KC_L, COMBO_END};
+const uint16_t PROGMEM v_scln_0[] = {KC_V, KC_SCLN, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   [F_D_ESC] = COMBO(f_d_esc, KC_ESC),
@@ -194,6 +216,17 @@ combo_t key_combos[COMBO_COUNT] = {
   [SPC_N_SFTA] = COMBO_ACTION(spc_n_sftn),
   [SPC_M_SFTA] = COMBO_ACTION(spc_m_sftm),
   [SPC_SCLN_COLN] = COMBO(spc_scln_coln,KC_COLN),
+  // number home
+  [M_A_1] = COMBO(m_a_1, KC_1),
+  [M_S_2] = COMBO(m_s_2, KC_2),
+  [M_D_3] = COMBO(m_d_3, KC_3),
+  [M_F_4] = COMBO(m_f_4, KC_4),
+  [M_G_5] = COMBO(m_g_5, KC_5),
+  [V_H_6] = COMBO(v_h_6, KC_6),
+  [V_J_7] = COMBO(v_j_7, KC_7),
+  [V_K_8] = COMBO(v_k_8, KC_8),
+  [V_L_9] = COMBO(v_l_9, KC_9),
+  [V_SCLN_0] = COMBO(v_scln_0, KC_0),
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
@@ -253,7 +286,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT_5x6(
       KC_GRV  ,  KC_1   ,  KC_2   ,  KC_3   ,  KC_4   ,  KC_5   ,            KC_6   ,  KC_7   ,  KC_8   ,  KC_9   ,  KC_0   ,  KC_BSPC  ,
       KC_TAB  ,  KC_Q   ,  KC_W   ,  KC_E   ,  KC_R   ,  KC_T   ,            KC_Y   ,  KC_U   ,  KC_I   ,  KC_O   ,  KC_P   ,  KC_MINS  ,
-      OSM_SFT ,  KC_A  ,  KC_S   ,  KC_D   ,  KC_F   ,  KC_G   ,            KC_H   ,  KC_J   ,  KC_K   ,  KC_L   ,  KC_SCLN ,  SFT_QT   ,
+      OSM_SFT ,  KC_A   ,  KC_S   ,  KC_D   ,  KC_F   ,  KC_G   ,            KC_H   ,  KC_J   ,  KC_K   ,  KC_L   ,  KC_SCLN ,  SFT_QT   ,
       KC_DEL  ,  KC_Z   ,  KC_X   ,  KC_C   ,  KC_V   ,  KC_B   ,            KC_N   ,  KC_M   ,  KC_COMM, KC_DOT  ,  KC_SLSH,  KC_BSLASH,
                           KC_LBRC ,  KC_RBRC,                                                    KC_PLUS, KC_EQL  ,
                                    LT(_RAISE, KC_TAB) , KC_SPC  ,            KC_ENT , OSL(_LOWER),
