@@ -1,7 +1,7 @@
 /* A standard layout for the Dactyl Manuform 5x6 Keyboard */
 
 #include QMK_KEYBOARD_H
-
+#include "keymap_steno.h"
 // #define RAISE MO(_RAISE)
 // #define LOWER MO(_LOWER)
 
@@ -270,6 +270,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 #define _LOWER 1
 #define _RAISE 2
 #define _DEV 3
+#define _PLOVER 4
 
 // #define SFT_A LSFT_T(KC_A )
 // #define SFT_SC RSFT_T(KC_SCLN )
@@ -291,7 +292,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_LBRC ,  KC_RBRC,                                                    KC_PLUS, KC_EQL  ,
                                    LT(_RAISE, KC_TAB) , KC_SPC  ,            KC_ENT , OSL(_LOWER),
                                               KC_LALT , KC_LCTL ,            KC_LCTL, KC_LALT  ,
-                                              _______ , KC_LGUI ,            KC_LGUI, KC_CAPS
+                                          TG(_PLOVER) , KC_LGUI ,            KC_LGUI, KC_CAPS
   ),
 
   [_LOWER] = LAYOUT_5x6(
@@ -328,7 +329,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                              _______ , _______ ,             _______ , _______ ,
                                              _______ , _______ ,             _______ , _______
 
+
   ),
+
+  [_PLOVER] = LAYOUT_5x6(
+
+     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,             XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
+     XXXXXXX , STN_N1  , STN_N2  , STN_N3  , STN_N4  , STN_N5  ,             STN_N6  , STN_N7  , STN_N8  , STN_N9  , STN_NA  , STN_NB  ,
+     XXXXXXX , STN_S1  , STN_TL  , STN_PL  , STN_HL  , STN_ST1 ,             STN_ST3 , STN_FR  , STN_PR  , STN_LR  , STN_TR  , STN_DR  ,
+     XXXXXXX , STN_S2  , STN_KL  , STN_WL  , STN_RL  , STN_ST2 ,             STN_ST4 , STN_RR  , STN_BR  , STN_GR  , STN_SR  , STN_ZR  ,
+                         XXXXXXX , XXXXXXX ,                                                     XXXXXXX , XXXXXXX ,
+                                             STN_A   , STN_O   ,             STN_E   , STN_U   ,
+                                             XXXXXXX , XXXXXXX ,             XXXXXXX , XXXXXXX ,
+                                         TG(_PLOVER) , XXXXXXX ,             XXXXXXX , XXXXXXX
+
+  ),
+
 };
 
   // [LAYER] = LAYOUT_5x6(
