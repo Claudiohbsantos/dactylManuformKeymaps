@@ -53,6 +53,7 @@ enum combos {
   ENT_O_DQT,
   ENT_P_UNDS,
     // lower row
+  SPC_GRV_TILD,
   ENT_SLSH_QUES,
   ENT_BSLS_PIPE,
   ENT_DOT_ARROW,
@@ -123,6 +124,7 @@ const uint16_t PROGMEM ent_p_unds[] = { KC_ENT, KC_P, COMBO_END};
 const uint16_t PROGMEM ent_dot_arrow[] = { KC_ENT, KC_DOT, COMBO_END};
 const uint16_t PROGMEM ent_slsh_ques[] = { KC_ENT, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM ent_bsls_pipe[] = { KC_ENT, KC_BSLS, COMBO_END};
+const uint16_t PROGMEM spc_grv_tild[] = { KC_SPC, KC_GRV, COMBO_END};
 // combo shift
 const uint16_t PROGMEM ent_q_sftq[] = {KC_ENT ,KC_Q , COMBO_END};
 const uint16_t PROGMEM ent_w_sftw[] = {KC_ENT ,KC_W , COMBO_END};
@@ -188,6 +190,7 @@ combo_t key_combos[COMBO_COUNT] = {
   [ENT_DOT_ARROW] = COMBO_ACTION(ent_dot_arrow),
   [ENT_SLSH_QUES] = COMBO(ent_slsh_ques,KC_QUES),
   [ENT_BSLS_PIPE] = COMBO(ent_bsls_pipe,KC_PIPE),
+  [SPC_GRV_TILD] = COMBO(spc_grv_tild, KC_TILD),
 // combo shifts
   [ENT_Q_SFTA] = COMBO_ACTION(ent_q_sftq),
   [ENT_W_SFTA] = COMBO_ACTION(ent_w_sftw),
@@ -289,7 +292,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB  ,  KC_Q   ,  KC_W   ,  KC_E   ,  KC_R   ,  KC_T   ,            KC_Y   ,  KC_U   ,  KC_I   ,  KC_O   ,  KC_P   ,  KC_MINS  ,
       OSM_SFT ,  KC_A   ,  KC_S   ,  KC_D   ,  KC_F   ,  KC_G   ,            KC_H   ,  KC_J   ,  KC_K   ,  KC_L   ,  KC_SCLN ,  SFT_QT   ,
       KC_DEL  ,  KC_Z   ,  KC_X   ,  KC_C   ,  KC_V   ,  KC_B   ,            KC_N   ,  KC_M   ,  KC_COMM, KC_DOT  ,  KC_SLSH,  KC_BSLASH,
-                          KC_LBRC ,  KC_RBRC,                                                    KC_PLUS, KC_EQL  ,
+                           KC_GRV , _______ ,                                                    KC_PLUS, KC_EQL  ,
                                    LT(_RAISE, KC_TAB) , KC_SPC  ,            KC_ENT , OSL(_LOWER),
                                               KC_LALT , KC_LCTL ,            KC_LCTL, KC_LALT  ,
                                           TG(_PLOVER) , KC_LGUI ,            KC_LGUI, KC_CAPS
@@ -332,6 +335,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   ),
 
+// https://www.paulfioravanti.com/blog/starting-stenography-ergodox/
   [_PLOVER] = LAYOUT_5x6(
 
      XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,             XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,
