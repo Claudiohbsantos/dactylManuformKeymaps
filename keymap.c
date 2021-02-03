@@ -274,6 +274,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 #define _RAISE 2
 #define _DEV 3
 #define _PLOVER 4
+#define _GAME 5
 
 // #define SFT_A LSFT_T(KC_A )
 // #define SFT_SC RSFT_T(KC_SCLN )
@@ -295,7 +296,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_GRV ,  A_TAB  ,                                                    KC_PLUS, KC_EQL  ,
                                    LT(_RAISE, KC_TAB) , KC_SPC  ,            KC_ENT , OSL(_LOWER),
                                               KC_LALT , KC_LCTL ,            KC_LCTL, KC_LALT  ,
-                                          TG(_PLOVER) , KC_LGUI ,            KC_LGUI, KC_CAPS
+                                            TG(_PLOVER) , KC_LGUI ,            KC_LGUI, KC_CAPS
   ),
 
   [_LOWER] = LAYOUT_5x6(
@@ -334,6 +335,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
   ),
+  
 
 // https://www.paulfioravanti.com/blog/starting-stenography-ergodox/
   [_PLOVER] = LAYOUT_5x6(
@@ -346,6 +348,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                              STN_A   , STN_O   ,             STN_E   , STN_U   ,
                                              XXXXXXX , XXXXXXX ,             XXXXXXX , XXXXXXX ,
                                          TG(_PLOVER) , XXXXXXX ,             XXXXXXX , XXXXXXX
+
+  ),
+
+  [_GAME] = LAYOUT_5x6(
+
+      KC_GRV  ,  KC_1   , KC_1   ,  KC_2   ,  KC_3   ,  KC_4   ,             KC_6   ,  KC_7   ,  KC_8   ,  KC_9   ,  KC_0   ,  KC_BSPC  ,
+      KC_TAB  ,  KC_I   , KC_Q   ,  KC_W   ,  KC_E   ,  KC_R   ,             KC_Y   ,  KC_U   ,  KC_I   ,  KC_O   ,  KC_P   ,  KC_MINS  ,
+      OSM_SFT ,  KC_M   , KC_A   ,  KC_S   ,  KC_D   ,  KC_F   ,             KC_H   ,  KC_J   ,  KC_K   ,  KC_L   ,  KC_SCLN ,  SFT_QT   ,
+      KC_DEL  ,  KC_ESC , KC_Z   ,  KC_X   ,  KC_C   ,  KC_V   ,             KC_N   ,  KC_M   ,  KC_COMM, KC_DOT  ,  KC_SLSH,  KC_BSLASH,
+                           KC_GRV ,  A_TAB  ,                                                    KC_PLUS, KC_EQL  ,
+                                             _______ , _______ ,             _______ , _______ ,
+                                             _______ , _______ ,             _______ , _______ ,
+                                            TG(_PLOVER)  , _______ ,             _______ , _______
+
 
   ),
 
