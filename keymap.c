@@ -57,6 +57,7 @@ enum combos {
   ENT_SLSH_QUES,
   ENT_BSLS_PIPE,
   ENT_DOT_ARROW,
+  ENT_EQL_GOEQ,
   // combo shifts
     // left hand
   ENT_Q_SFTA,
@@ -122,6 +123,7 @@ const uint16_t PROGMEM ent_i_astr[] = { KC_ENT, KC_I, COMBO_END};
 const uint16_t PROGMEM ent_o_dqt[] = { KC_ENT, KC_O, COMBO_END};
 const uint16_t PROGMEM ent_p_unds[] = { KC_ENT, KC_P, COMBO_END};
 const uint16_t PROGMEM ent_dot_arrow[] = { KC_ENT, KC_DOT, COMBO_END};
+const uint16_t PROGMEM ent_eql_goeq[] = { KC_ENT, KC_EQL, COMBO_END};
 const uint16_t PROGMEM ent_slsh_ques[] = { KC_ENT, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM ent_bsls_pipe[] = { KC_ENT, KC_BSLS, COMBO_END};
 const uint16_t PROGMEM spc_grv_tild[] = { KC_SPC, KC_GRV, COMBO_END};
@@ -188,6 +190,7 @@ combo_t key_combos[COMBO_COUNT] = {
   [ENT_O_DQT] = COMBO(ent_o_dqt, KC_DQT),
   [ENT_P_UNDS] = COMBO(ent_p_unds, KC_UNDS),
   [ENT_DOT_ARROW] = COMBO_ACTION(ent_dot_arrow),
+  [ENT_EQL_GOEQ] = COMBO_ACTION(ent_eql_goeq),
   [ENT_SLSH_QUES] = COMBO(ent_slsh_ques,KC_QUES),
   [ENT_BSLS_PIPE] = COMBO(ent_bsls_pipe,KC_PIPE),
   [SPC_GRV_TILD] = COMBO(spc_grv_tild, KC_TILD),
@@ -239,6 +242,11 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
         SEND_STRING("=>");
       }
       break;
+    case ENT_EQL_GOEQ:
+      if (pressed) {
+        SEND_STRING(":=");
+      }
+      break;
     case ENT_Q_SFTA: if (pressed) { SEND_STRING("Q"); } break;
     case ENT_W_SFTA: if (pressed) { SEND_STRING("W"); } break;
     case ENT_E_SFTA: if (pressed) { SEND_STRING("E"); } break;
@@ -283,9 +291,6 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 
 #define OSM_SFT OSM(MOD_LSFT)
 
-
-
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTY] = LAYOUT_5x6(
@@ -294,15 +299,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       OSM_SFT ,  KC_A   ,  KC_S   ,  KC_D   ,  KC_F   ,  KC_G   ,            KC_H   ,  KC_J   ,  KC_K   ,  KC_L   ,  KC_SCLN ,  SFT_QT   ,
       KC_DEL  ,  KC_Z   ,  KC_X   ,  KC_C   ,  KC_V   ,  KC_B   ,            KC_N   ,  KC_M   ,  KC_COMM, KC_DOT  ,  KC_SLSH,  KC_BSLASH,
                            KC_GRV ,  A_TAB  ,                                                    KC_PLUS, KC_EQL  ,
-                                   LT(_RAISE, KC_TAB) , KC_SPC  ,            KC_ENT , OSL(_LOWER),
+                                   LT(_RAISE, KC_TAB) , KC_SPC  ,            KC_ENT , LT(_LOWER, KC_CAPS),
                                               KC_LALT , KC_LCTL ,            KC_LCTL, KC_LALT  ,
-                                            TG(_PLOVER) , KC_LGUI ,            KC_LGUI, KC_CAPS
+                                            TG(_GAME) , KC_LGUI ,            KC_LGUI, KC_CAPS
   ),
 
   [_LOWER] = LAYOUT_5x6(
      _______ , _______ , _______ , _______ , _______ , _______ ,             _______ , _______ , _______ , _______ , _______ , _______ ,
-     _______ , _______ , _______ , _______ , _______ , _______ ,             _______ ,  KC_P7  ,  KC_P8  ,  KC_P9  , KC_PLUS , KC_PLUS ,
-     _______ , KC_HOME , KC_PGUP , KC_PGDN , KC_END  , _______ ,             _______ ,  KC_P4  ,  KC_P5  ,  KC_P6  , KC_MINS , KC_PIPE ,
+     _______ , _______ , _______ , _______ , _______ , _______ ,             _______ ,  KC_P7  ,  KC_P8  ,  KC_P9  , KC_PPLS , KC_PLUS ,
+     _______ , KC_HOME , KC_PGUP , KC_PGDN , KC_END  , _______ ,             _______ ,  KC_P4  ,  KC_P5  ,  KC_P6  , KC_PMNS , KC_PIPE ,
      _______ , _______ , _______ , _______ , _______ , _______ ,             _______ ,  KC_P1  ,  KC_P2  ,  KC_P3  , KC_EQL  , KC_UNDS ,
                          _______ , KC_PSCR ,                                                      KC_P0, KC_ASTR,
                                             MO(_DEV) , _______ ,             _______ , _______ ,
@@ -360,7 +365,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_GRV ,  A_TAB  ,                                                    KC_PLUS, KC_EQL  ,
                                              _______ , _______ ,             _______ , _______ ,
                                              _______ , _______ ,             _______ , _______ ,
-                                            TG(_PLOVER)  , _______ ,             _______ , _______
+                                            TG(_GAME)  , _______ ,             _______ , _______
 
 
   ),
