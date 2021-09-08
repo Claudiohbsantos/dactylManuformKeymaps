@@ -29,6 +29,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // generated code has "_combo" added to end of variables in COMBO parameters
 enum combos {
   F_D_ESC,
+  F_S_F13,
   J_K_BSPC,
   J_L_DEL,
   // symbols
@@ -102,6 +103,7 @@ enum combos {
 };
 
 const uint16_t PROGMEM f_d_esc[] = { KC_F, KC_D, COMBO_END};
+const uint16_t PROGMEM f_s_f13[] = { KC_F, KC_S, COMBO_END};
 const uint16_t PROGMEM j_k_bspc[] = { KC_J, KC_K, COMBO_END};
 const uint16_t PROGMEM j_l_del[] = { KC_J, KC_L, COMBO_END};
 const uint16_t PROGMEM spc_f_lprn[] = { KC_SPC, KC_F, COMBO_END};
@@ -169,6 +171,7 @@ const uint16_t PROGMEM v_scln_0[] = {KC_V, KC_SCLN, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   [F_D_ESC] = COMBO(f_d_esc, KC_ESC),
+  [F_S_F13] = COMBO(f_s_f13, KC_F13),
   [J_K_BSPC] = COMBO(j_k_bspc, KC_BSPC),
   [J_L_DEL] = COMBO(j_l_del, KC_DEL),
   [SPC_F_LPRN] = COMBO(spc_f_lprn, KC_LPRN),
