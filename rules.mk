@@ -27,3 +27,4 @@ NKRO_ENABLE = yes            # Nkey Rollover - if this doesn't work, see here: h
 FORCE_NKRO = yes
 STENO_ENABLE = yes
 
+BOOTLOADER = atmel-dfu 

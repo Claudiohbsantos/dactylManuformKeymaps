@@ -301,7 +301,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_GRV ,  A_TAB  ,                                                    KC_PLUS, KC_EQL  ,
                                    LT(_RAISE, KC_TAB) , KC_SPC  ,            KC_ENT , LT(_LOWER, KC_CAPS),
                                               KC_LALT , KC_LCTL ,            KC_LCTL, KC_LALT  ,
-                                            TG(_GAME) , KC_LGUI ,            KC_LGUI, KC_CAPS
+                                            TG(_GAME) , KC_LGUI ,            KC_LGUI, CG_TOGG
   ),
 
   [_LOWER] = LAYOUT_5x6(
@@ -324,7 +324,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          KC_VOLD , KC_VOLU ,                                                     _______ , _______ ,
                                              _______ , _______ ,             _______ , MO(_DEV) ,
                                              _______ , _______ ,             _______ ,  _______ ,
-                                             RESET   , _______ ,             _______ ,  _______
+                                             RESET   , _______ ,             _______ ,  RESET   
   ),
 
   [_DEV] = LAYOUT_5x6(
