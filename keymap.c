@@ -89,17 +89,6 @@ enum combos {
   SPC_N_SFTA,
   SPC_M_SFTA,
   SPC_SCLN_COLN,
-  // Number combos
-  RCTL_M_1,
-  RCTL_COMM_2,
-  RCTL_DOT_3,
-  RCTL_J_4,
-  RCTL_K_5,
-  RCTL_L_6,
-  RCTL_U_7,
-  RCTL_I_8,
-  RCTL_O_9,
-  RCTL_PLUS_0,
 };
 
 const uint16_t PROGMEM f_d_esc[] = { KC_F, KC_D, COMBO_END};
@@ -157,17 +146,6 @@ const uint16_t PROGMEM spc_l_sftl[] = {KC_SPC ,KC_L , COMBO_END};
 const uint16_t PROGMEM spc_n_sftn[] = {KC_SPC ,KC_N , COMBO_END};
 const uint16_t PROGMEM spc_m_sftm[] = {KC_SPC ,KC_M , COMBO_END};
 const uint16_t PROGMEM spc_scln_coln[] = { KC_SPC, KC_SCLN, COMBO_END};
-// number combos
-const uint16_t PROGMEM rctrl_m_1[] = {KC_RCTL ,KC_M , COMBO_END};
-const uint16_t PROGMEM rctrl_comm_2[] = {KC_RCTL ,KC_COMM , COMBO_END};
-const uint16_t PROGMEM rctrl_dot_3[] = {KC_RCTL ,KC_DOT , COMBO_END};
-const uint16_t PROGMEM rctrl_j_4[] = {KC_RCTL ,KC_J , COMBO_END};
-const uint16_t PROGMEM rctrl_k_5[] = {KC_RCTL ,KC_K , COMBO_END};
-const uint16_t PROGMEM rctrl_l_6[] = {KC_RCTL ,KC_L , COMBO_END};
-const uint16_t PROGMEM rctrl_u_7[] = {KC_RCTL ,KC_U , COMBO_END};
-const uint16_t PROGMEM rctrl_i_8[] = {KC_RCTL ,KC_I , COMBO_END};
-const uint16_t PROGMEM rctrl_o_9[] = {KC_RCTL ,KC_O , COMBO_END};
-const uint16_t PROGMEM rctrl_plus_0[] = {KC_RCTL ,KC_PLUS , COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   [F_D_ESC] = COMBO(f_d_esc, KC_ESC),
@@ -225,18 +203,6 @@ combo_t key_combos[COMBO_COUNT] = {
   [SPC_N_SFTA] = COMBO_ACTION(spc_n_sftn),
   [SPC_M_SFTA] = COMBO_ACTION(spc_m_sftm),
   [SPC_SCLN_COLN] = COMBO(spc_scln_coln,KC_COLN),
-  // combo numbers
-
-  [RCTL_M_1] = COMBO(rctrl_m_1, KC_1),
-  [RCTL_COMM_2] = COMBO(rctrl_comm_2, KC_2),
-  [RCTL_DOT_3] = COMBO(rctrl_dot_3, KC_3),
-  [RCTL_J_4] = COMBO(rctrl_j_4, KC_4),
-  [RCTL_K_5] = COMBO(rctrl_k_5, KC_5),
-  [RCTL_L_6] = COMBO(rctrl_l_6, KC_6),
-  [RCTL_U_7] = COMBO(rctrl_u_7, KC_7),
-  [RCTL_I_8] = COMBO(rctrl_i_8, KC_8),
-  [RCTL_O_9] = COMBO(rctrl_o_9,KC_9),
-  [RCTL_PLUS_0] = COMBO(rctrl_plus_0, KC_0),
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
