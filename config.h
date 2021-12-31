@@ -29,8 +29,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define ONESHOT_TAP_TOGGLE 3  /* Tapping this number of times holds the key until tapped once again. */
 #define ONESHOT_TIMEOUT 5000  /* Time (in ms) before the one shot key is released */
 
-#define COMBO_COUNT 64
-#define COMBO_TERM 60
+#define COMBO_TERM 50
+#define COMBO_VARIABLE_LEN
 
 // #define AUTO_SHIFT_TIMEOUT 135
 
