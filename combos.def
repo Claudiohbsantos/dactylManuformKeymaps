@@ -75,3 +75,24 @@ COMB(RCTRL_U_7,    KC_7,KC_RCTL ,KC_U)
 COMB(RCTRL_I_8,    KC_8,KC_RCTL ,KC_I)
 COMB(RCTRL_O_9,    KC_9,KC_RCTL ,KC_O)
 COMB(RCTRL_PLUS_0, KC_0,KC_RCTL ,KC_PLUS)
+
+// shortcuts
+SUBS(KWD_USERNAME, "claudiohbsantos", KC_ENT ,KC_SPC, KC_U )
+SUBS(KWD_EMAIL, "claudiohbsantos@gmail.com", KC_ENT ,KC_SPC, KC_E )
+
+// common english words
+SUBS(KWD_THE, "the ", KC_T ,KC_E, KC_H )
+SUBS(KWD_YOU, "you ", KC_Y ,KC_O, KC_U )
+SUBS(KWD_THAT, "that ", KC_T ,KC_H, KC_A )
+SUBS(KWD_WAS, "was ", KC_W ,KC_A )
+
+// programming keywords
+SUBS(KWD_FUNCTION, "function", KC_F ,KC_C, KC_O, KC_N )
+SUBS(KWD_RETURN, "return", KC_R ,KC_E, KC_N )
+SUBS(KWD_ELSE, "else", KC_E ,KC_L, KC_S )
+SUBS(KWD_LENGTH, "length", KC_E ,KC_L, KC_H )
+SUBS(KWD_THIS, "this", KC_T ,KC_H, KC_I, KC_S )
+SUBS(KWD_ERR, "err", KC_E ,KC_R)
+SUBS(KWD_IF, "if", KC_I ,KC_F)
+
+
