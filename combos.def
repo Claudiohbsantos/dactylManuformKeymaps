@@ -4,10 +4,21 @@
 // COMB(AB_ESC,     KC_ESC,   KC_A, KC_B)
 // SUBS(ENT_E_SFTE,  "me ",   KC_M, KC_E) // SUBS uses SEND_STRING to output the given string.
 
-COMB(F_D_ESC, KC_ESC, KC_F, KC_D)
+COMB(D_S_F14, KC_F14, KC_D, KC_S)
 COMB(F_S_F13, KC_F13, KC_F, KC_S)
+COMB(F_D_ESC, KC_ESC, KC_F, KC_D)
+
 COMB(J_K_BSPC, KC_BSPC, KC_J, KC_K)
 COMB(J_L_DEL, KC_DEL, KC_J, KC_L)
+COMB(K_L_F15, KC_F15, KC_K, KC_L)
+
+COMB(C_X_F16, KC_F16, KC_C, KC_X)
+COMB(V_X_F17, KC_F17, KC_V, KC_X)
+COMB(V_C_F18, KC_F18, KC_V, KC_C)
+
+COMB(M_COMMA_F19, KC_F19, KC_M, KC_COMMA)
+// COMB(M_DOT_F20, KC_F20, KC_M, KC_DOT)
+COMB(COMMA_DOT_F20, KC_F20, KC_COMMA, KC_DOT)
 
 // symbols
 COMB(SPC_F_LPRN, KC_LPRN, KC_SPC, KC_F)
@@ -84,7 +95,6 @@ SUBS(KWD_EMAIL, "claudiohbsantos@gmail.com", KC_ENT ,KC_SPC, KC_E )
 SUBS(KWD_THE, "the ", KC_T ,KC_E, KC_H )
 SUBS(KWD_YOU, "you ", KC_Y ,KC_O, KC_U )
 SUBS(KWD_THAT, "that ", KC_T ,KC_H, KC_A )
-SUBS(KWD_WAS, "was ", KC_W ,KC_A )
 
 // programming keywords
 SUBS(KWD_FUNCTION, "function", KC_F ,KC_C, KC_O, KC_N )
@@ -93,6 +103,4 @@ SUBS(KWD_ELSE, "else", KC_E ,KC_L, KC_S )
 SUBS(KWD_CONST, "const ", KC_C ,KC_O, KC_S )
 SUBS(KWD_LENGTH, "length", KC_E ,KC_L, KC_H )
 SUBS(KWD_THIS, "this", KC_T ,KC_H, KC_I, KC_S )
-SUBS(KWD_ERR, "err", KC_E ,KC_R)
-SUBS(KWD_IF, "if", KC_I ,KC_F)
 
