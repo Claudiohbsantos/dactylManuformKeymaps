@@ -1,16 +1,17 @@
 /* A standard layout for the Dactyl Manuform 5x6 Keyboard */
 
 #include QMK_KEYBOARD_H
-#include "g/keymap_combo.h"
-// #define RAISE MO(_RAISE)
-// #define LOWER MO(_LOWER)
 
-//// shortenings
+//// Layer definitions - must be defined before including combos
 #define _QWERTY 0
 #define _LOWER 1
 #define _RAISE 2
 #define _DEV 3
 #define _GAME 4
+
+#include "g/keymap_combo.h"
+// #define RAISE MO(_RAISE)
+// #define LOWER MO(_LOWER)
 
 // #define SFT_A LSFT_T(KC_A )
 // #define SFT_SC RSFT_T(KC_SCLN )
