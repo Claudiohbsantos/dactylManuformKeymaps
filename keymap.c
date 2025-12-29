@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          KC_VOLD , KC_VOLU ,                                                     _______ , _______ ,
                                              _______ , _______ ,             _______ , MO(_DEV) ,
                                              _______ , _______ ,             _______ ,  _______ ,
-                                             _______ , QK_RBT  ,             QK_RBT  , _______
+                                             _______ , QK_BOOT  ,             QK_RBT  , _______
   ),
 
   [_DEV] = LAYOUT_5x6(
