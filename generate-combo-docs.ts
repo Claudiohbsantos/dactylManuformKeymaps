@@ -35,10 +35,14 @@ interface Combo {
 }
 
 function parseComboLine(line: string): Combo | null {
-  const combMatch = line.match(/^(COMB|SUBS)\((\w+)\s*,\s*"?([^,]+)"?\s*,\s*(.+)\)$/);
+  // Match COMB or SUBS, then capture name, result (with or without quotes), and keys
+  const combMatch = line.match(/^(COMB|SUBS)\((\w+)\s*,\s*("([^"]+)"|([^,]+?))\s*,\s*(.+)\)$/);
   if (!combMatch) return null;
 
-  const [, type, name, result, keysStr] = combMatch;
+  const [, type, name, , quotedResult, unquotedResult, keysStr] = combMatch;
+  // Use quotedResult if present, otherwise use unquotedResult, then trim
+  const result = (quotedResult || unquotedResult).trim();
+  
   // Split by comma but handle LT(_LOWER, KC_CAPS) as a single key
   const keys: string[] = [];
   let currentKey = '';
@@ -64,7 +68,7 @@ function parseComboLine(line: string): Combo | null {
 
   return {
     name,
-    result: result.trim(),
+    result,
     keys,
     type: type as 'COMB' | 'SUBS',
   };
@@ -287,6 +291,9 @@ function generateCombosDocs(combosDefPath: string, outputPath: string): void {
 
   // CapsLock combos
   markdown += generateLayoutForModifier(combos, 'LT(_LOWER,KC_CAPS)', 'CapsLock');
+
+  // Tab combos
+  markdown += generateLayoutForModifier(combos, 'LT(_RAISE, KC_TAB)', 'Tab');
 
   // Adjacent key combos
   markdown += generateAdjacentCombosList(combos);
