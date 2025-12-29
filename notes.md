@@ -6,6 +6,14 @@ current version: 0.15.1
 1. Create symlink to this dir as `qmk_firmware/keyboards/handwired/dactyl_manuform/5x6/keymaps/claudio5x6`
 2. Create symlink from `qmk.ini` in application dir. In MacOS, that's `~/Library/Application Support/qmk/qmk.ini`
 
+## Entering Bootloader Mode for Flashing
+
+There are three ways to enter bootloader mode:
+
+1. **Bootmagic Lite** (recommended): Hold the top-left key (grave/backtick `` ` ``) while plugging in USB
+2. **Command Mode**: Press **Left Shift + Right Shift + B** simultaneously
+3. **Keymap Key**: Press **RAISE + GUI** (hold tab on left thumb cluster, then press GUI key)
+
 ## Upgrading Firmware version
 
 1. `git pull` and then checkout to latest stable tag 
